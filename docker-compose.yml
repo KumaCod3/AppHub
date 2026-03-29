@@ -1,0 +1,8 @@
+services:
+  app_HUB:
+    build:
+    ports:
+      - "7777:7777"
+    restart: always
+    env_file:
+      - .env

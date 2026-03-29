@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyHUB</title>
+  <link rel="stylesheet" href="css/styles2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="images/img0.png">
+</head>
+<body>
+  <div class="hub">
+
+    <section class="grid" aria-label="Elenco app">
+      <a class="card-btn v1" id="App1" aria-label="App 1" target="_blank">
+        <div class="card-media" style="background-image:url('images/img1.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">Promemoria</div>
+            <div class="meta">Cose da ricordare</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="card-btn v2" id="App2" aria-label="App 2" target="_blank">
+        <div class="card-media" style="background-image:url('images/img2.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">Track</div>
+            <div class="meta">Film e Serie TV</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="card-btn v3" id="App3" aria-label="App 3" target="_blank">
+        <div class="card-media" style="background-image:url('images/img3.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">Spazzatura</div>
+            <div class="meta">Cosa buttiamo oggi?</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="card-btn v4" id="App4" aria-label="App 4" target="_blank">
+        <div class="card-media" style="background-image:url('images/img4.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">Menu</div>
+            <div class="meta">Cosa mangiamo oggi?</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="card-btn v5" id="App5" aria-label="App 5" target="_blank">
+        <div class="card-media" style="background-image:url('images/img5.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">Gitea</div>
+            <div class="meta">Il tuo GitPersonale</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="card-btn v6" id="App6" aria-label="App 6" target="_blank" target="_blank">
+        <div class="card-media" style="background-image:url('images/img6.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">App 6</div>
+            <div class="meta">Baaaaa</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="card-btn v7" id="App7" aria-label="App 7" target="_blank">
+        <div class="card-media" style="background-image:url('images/img7.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">Immich</div>
+            <div class="meta">Foto</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="card-btn v8" id="App8" aria-label="App 8" target="_blank">
+        <div class="card-media" style="background-image:url('images/img8.png')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <div class="texts">
+            <div class="label">Navidrome</div>
+            <div class="meta">Musica</div>
+          </div>
+        </div>
+      </a>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+  
+	const porte = [6161, 5173, 53147, 0, 3000, 0, 2283, 4533];
+
+	document.addEventListener("DOMContentLoaded", (event) => {
+		go();
+	});
+
+	function go() {
+		const host = window.location.hostname;
+		const protocol = "http://";
+
+		porte.forEach((p, i) => {
+			if (p === 0) return;
+
+			const url = `${protocol}${host}:${p}`;
+			
+			const idApp = `App${i + 1}`;
+			const elemento = document.getElementById(idApp);
+
+			if (elemento) {
+				elemento.href = url;
+			}
+		});
+	}
+</script>
+</body>
+</html>
