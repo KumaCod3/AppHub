@@ -130,3 +130,36 @@
   margin-top: 5px;
   color: rgb(237, 123, 58);
 }
+
+/* Si attiva solo su schermi con larghezza inferiore a 768px */
+@media (max-width: 768px) {
+  
+  body {
+    padding: 1rem; /* Riduciamo il padding esterno da 3rem a 1rem per dare più spazio */
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Mantengo le 2 colonne che volevi */
+    gap: 1rem; /* Ridotto drasticamente da 5rem a 1rem: le card diventano molto più larghe! */
+  }
+
+  .card-btn {
+    height: 160px; /* Ridotto da 260px per proporzionarlo allo schermo piccolo */
+    border-radius: 20px; /* Arrotondamento ridotto (60px era troppo per una card piccola) */
+  }
+
+  .card-content {
+    padding: 12px; /* Meno spazio interno per lasciare respiro ai testi */
+  }
+
+  /* Ridimensionamento testi */
+  .texts .label {
+    font-size: 1.2rem; /* Da 3rem a 1.2rem: ora è leggibile e non sborda */
+    margin-bottom: 2px;
+  }
+
+  .texts .meta {
+    font-size: 0.8rem; /* Da 1.6rem a 0.8rem */
+    margin-top: 2px;
+  }
+}
